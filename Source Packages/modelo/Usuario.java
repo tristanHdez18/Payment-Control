@@ -1,22 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package modelo;
 
 public class Usuario {
     String mail;
     String pass;
+    String roll;
     int id;
 
     public Usuario() {
     }
 
-    public Usuario(String mail, String pass, int id) {
+    public Usuario(String mail, String pass, int id, String roll) {
         this.mail = mail;
         this.pass = pass;
         this.id = id;
+        this.roll=roll;
     }
 
     public String getMail() {
@@ -43,5 +41,12 @@ public class Usuario {
         this.id = id;
     }
     
+    public String getRoll(){
+    return roll;
+    }
+    
+    public void setRoll(String roll){
+    this.roll=roll;
+    }
     
 }

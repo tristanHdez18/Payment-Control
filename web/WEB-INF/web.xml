@@ -8,6 +8,18 @@
         <servlet-name>Email</servlet-name>
         <servlet-class>email.Email</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Controladorclient</servlet-name>
+        <servlet-class>controladorclient.Controladorclient</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControladorRoot</servlet-name>
+        <servlet-class>controladorRoot.ControladorRoot</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControladorImagen</servlet-name>
+        <servlet-class>controladorImagen.ControladorImagen</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Controlador</servlet-name>
         <url-pattern>/Controlador</url-pattern>
@@ -15,6 +27,18 @@
     <servlet-mapping>
         <servlet-name>Email</servlet-name>
         <url-pattern>/Email</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Controladorclient</servlet-name>
+        <url-pattern>/Controladorclient</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorRoot</servlet-name>
+        <url-pattern>/ControladorRoot</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorImagen</servlet-name>
+        <url-pattern>/ControladorImagen</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

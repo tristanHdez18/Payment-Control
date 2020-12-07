@@ -62,6 +62,10 @@
                 <input type="text" name="txtAdd" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
             </div>
             <div class="form-group">
+                <label for="inputAddress">Rol</label>
+                <input type="text" name="txtRol" class="form-control" id="inputAddress" placeholder="Vendedor o Cliente" required>
+            </div>
+            <div class="form-group">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
                     <label class="form-check-label" for="invalidCheck">

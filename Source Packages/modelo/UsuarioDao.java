@@ -30,11 +30,13 @@ Connection con;
       ps=con.prepareStatement(sql);
       ps.setString(1, user.getMail());
       ps.setString(2, user.getPass());
+     // ps.setString(3, user.getRoll());
       rs=ps.executeQuery();
       while(rs.next()){
           r=r+1;
       user.setMail(rs.getString("Mail"));
       user.setPass(rs.getString("Passwd"));
+     // user.setRoll(rs.getString("Rol"));
       }
       if(r==1){
       return 1;

@@ -17,7 +17,7 @@
     </head>
     <body> <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#">
-                <img src="/WEB-INF/Habbo.png" width="30" height="30" class="d-inline-block align-top" alt="">  
+                <img src="Habbo.png" width="30" height="30" class="d-inline-block align-top" alt="">  
                 T&S</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -26,16 +26,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="http://localhost:8080/TS/mainClient.jsp">Home<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="mainClient.jsp">Home<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="http://localhost:8080/TS/reportsClient.jsp">Reports</a>
+                        <a class="nav-link " href="reportsClient.jsp">Reports</a>
                     </li>      
                     <li class="nav-item">
-                        <a class="nav-link " href="http://localhost:8080/TS/paymentsClient.jsp">Payments</a>
+                        <a class="nav-link " href="paymentsClient.jsp">Payments</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="http://localhost:8080/TS/logIn.jsp">Log Out</a>
+                        <a class="nav-link " href="logIn.jsp">Log Out</a>
                     </li> 
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
@@ -44,30 +44,35 @@
                 </form>
             </div>
         </nav>
-         <table class="table table-sm table-dark">
-         <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Product</th>
-      <th scope="col">Price $</th>
-      <th scope="col">Date</th>
-      <th scope="col">Pay $</th>
-      <th scope="col">Status</th>
-      <th scope="col">Time</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tr>
-    <td class="bg-primary">1</td>
-    <td class="bg-success">Blusa Pato Donald</td>
-    <td class="bg-warning">300</td>
-    <td class="bg-danger">2020-04-02</td>
-    <td class="bg-info">200</td>
-    <td class="bg-success">Pending</td>
-    <td class="bg-warning">14:30:30</td>
-    <td><button type="button" class="btn btn-primary">Pay</button></td>
-    </tr>
-    </table>
-    <button type="submit" class="btn btn-primary">Print</button>
+       
+          <div class="container mt-5 col-lg-5">
+            <div class="card border-info">
+                <div class="card-header bg-info">
+                    <h4>Hacer Nuevo Pago</h4>
+                </div>
+                <div class="card-body">
+                    <form method="Controladorclient">
+                        <label >Nombre del Producto</label>
+                        <input type="text" name="producto" class="form-control">
+                        <label>Precio</label>
+                        <input type="text" name="precio" class="form-control">
+                        <label>Fecha</label>
+                        <input type="text" name="fecha" class="form-control">
+                        <label>Cantidad a Pagar</label>
+                        <input type="text" name="pago" class="form-control">
+                        <label>Estatus</label>
+                        <input type="text" name="estatus" class="form-control">
+                        <label>Hora</label>
+                        <input type="text" name="hora" class="form-control">
+                       
+                        <a class="nav-link " href="upload.jsp">Subir recibo</a>
+                        <input type="submit" name="accion" value="Agregar" class="btn btn-primary">
+                        
+                        <a href="reportsClient.jsp">Cancelar</a>
+                    </form>
+                </div>                
+            </div>
+        </div>
+           
     </body>
 </html>

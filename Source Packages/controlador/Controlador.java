@@ -8,6 +8,7 @@ package controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.sql.JDBCType.NULL;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -47,12 +48,30 @@ public class Controlador extends HttpServlet {
             if (accion.equals("Ingresar")) {
                 String mail = request.getParameter("txtCorreo");
                 String pas = request.getParameter("txtPass");
+                String rol = request.getParameter("txtVendedor");
                 us.setMail(mail);
                 us.setPass(pas);
+                
+                
                 r = d.val(us);
                 if (r == 1) {
+                    if(pas.equals("Groudon117") &&  rol.equals("SoyAdmin")){
+                    
+                     request.getRequestDispatcher("mainRoot.jsp").forward(request, response);
 
-                    request.getRequestDispatcher("mainClient.jsp").forward(request, response);
+                        
+                    }
+                    else if(rol.equals("Cliente")){                   
+                       
+                        request.getRequestDispatcher("mainClient.jsp").forward(request, response);
+                        
+                    }
+                    else if(rol.equals("Vendedor")){                   
+                       
+                        request.getRequestDispatcher("mainSalesman.jsp").forward(request, response);
+                        
+                    }
+                    
                 } else {
                     request.getRequestDispatcher("index.jsp").forward(request, response);
                 }
@@ -85,13 +104,15 @@ public class Controlador extends HttpServlet {
             String email = request.getParameter("txtEmail");
             String cont = request.getParameter("txtCon");
             String addr = request.getParameter("txtAdd");
+            String rol = request.getParameter("txtRol");
 
             re.setName(name);
             re.setTel(tel);
             re.setEmail(email);
             re.setPwd(cont);
             re.setAddress(addr);
-
+            re.setRol(rol);
+            
             dao.signUp(re);
 
           // request.getRequestDispatcher("").forward(request, response);

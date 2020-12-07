@@ -1,8 +1,4 @@
-<%-- 
-    Document   : mainClient
-    Created on : Dec 1, 2020, 3:23:36 PM
-    Author     : tristan
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -23,7 +19,7 @@
     <body>
  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">
-      <img src="/WEB-INF/Habbo.png" width="30" height="30" class="d-inline-block align-top" alt="">  
+      <img src="Habbo.png" width="30" height="30" class="d-inline-block align-top" alt="">  
     T&S</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -35,10 +31,10 @@
         <a class="nav-link" href="mainClient.jsp">Home<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="reportsClient.jsp">Reports</a>
+        <a class="nav-link " href="Controladorclient?accion=listar">Reports</a>
       </li>      
       <li class="nav-item">
-        <a class="nav-link " href="paymentsClient.jsp">Payments</a>
+        <a class="nav-link " href="Controladorclient?accion=pago">Payments</a>
       </li>
       <li class="nav-item">
         <a class="nav-link " href="logIn.jsp">Log Out</a>
@@ -50,13 +46,10 @@
     </form>
   </div>
 </nav>
-        <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-  <div class="card-header">User</div>
-  <div class="card-body">
-    <h5 class="card-title">Report</h5>
-    <p class="card-text">More information</p>
+     
   </div>
 </div>
+        
     </body>
     </body>
 </html>

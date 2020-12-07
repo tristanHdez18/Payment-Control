@@ -1,9 +1,9 @@
-<%-- 
-    Document   : reportsClient
-    Created on : Dec 1, 2020, 8:55:11 PM
-    Author     : tristan
---%>
 
+
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.List"%>
+<%@page import="reports.Reports"%>
+<%@page import="reports.ReportsDao"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,7 +18,7 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">
-      <img src="/WEB-INF/Habbo.png" width="30" height="30" class="d-inline-block align-top" alt="">  
+      <img src="Habbo.png" width="30" height="30" class="d-inline-block align-top" alt="">  
     T&S</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -27,16 +27,16 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="http://localhost:8080/TS/mainClient.jsp">Home<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="mainClient.jsp">Home<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="http://localhost:8080/TS/reportsClient.jsp">Reports</a>
+        <a class="nav-link " href="reportsClient.jsp">Reports</a>
       </li>
             <li class="nav-item">
-        <a class="nav-link " href="http://localhost:8080/TS/paymentsClient.jsp">Payments</a>
+        <a class="nav-link " href="Controladorclient?accion=pago">Payments</a>
       </li>
     <li class="nav-item">
-        <a class="nav-link " href="http://localhost:8080/TS/index.jsp">Log Out</a>
+        <a class="nav-link " href="index.jsp">Log Out</a>
       </li> 
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -45,12 +45,46 @@
     </form>
   </div>
 </nav>
-        <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-  <div class="card-header">Report</div>
-  <div class="card-body">
-    <h5 class="card-title">Name</h5>
-    <p class="card-text">More information</p>
-  </div>
-</div>
+  
+        <div class="card-body">
+                    <table class="table table-sm table-dark">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">PRODUCTO</th>
+                                <th scope="col">PRECIO</th>
+                                <th scope="col">FECHA</th>
+                                <th scope="col">PAGO</th>
+                                <th scope="col">ESTATUS</th>
+                                <th scope="col">HORA</th>
+                                
+                            </tr>
+                        </thead>
+                        <% 
+                ReportsDao dao=new ReportsDao();
+                List<Reports>list=dao.listar();
+                Iterator<Reports>iter=list.iterator();
+                Reports per=null;
+                while(iter.hasNext()){
+                per=iter.next();
+                
+                %>
+                        <tbody>
+                              <tr>
+                                    <td class="bg-danger"><%= per.getId() %></td>
+                                    <td class="bg-primary"><%= per.getProducto()%></td>
+                                    <td class="bg-success"><%= per.getPrecio() %></td>
+                                    <td class="bg-warning"><%= per.getFecha() %></td>
+                                    <td class="bg-danger"><%= per.getPago() %></td>
+                                    <td class="bg-info"><%= per.getEstatus() %></td>
+                                    <td class="bg-success"><%= per.getHora() %></td>
+                                   
+                                </tr>
+                              <% } %>
+                        </tbody>
+                    </table>
+
+                </div>
+        
     </body>
 </html>

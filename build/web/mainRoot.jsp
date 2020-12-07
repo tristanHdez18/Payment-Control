@@ -18,7 +18,7 @@
     <body>
  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">
-      <img src="/WEB-INF/Habbo.png" width="30" height="30" class="d-inline-block align-top" alt="">  
+      <img src="Habbo.png" width="30" height="30" class="d-inline-block align-top" alt="">  
     T&S</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -27,16 +27,16 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="http://localhost:8080/TS/mainRoot.jsp">Home<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="mainRoot.jsp">Home<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="http://localhost:8080/TS/reportsRoot.jsp">Reports</a>
+        <a class="nav-link " href="ControladorRoot?accion=listar">Reports</a>
       </li>     
       <li class="nav-item">
-        <a class="nav-link " href="http://localhost:8080/TS/userRoot.jsp">Users</a>
+       <%-- <a class="nav-link " href="ControladorRoot?accion=editar&id=<%= %>">Edit</a> --%>
       </li>     
       <li class="nav-item">
-        <a class="nav-link " href="http://localhost:8080/TS/logIn.jsp">Log Out</a>
+        <a class="nav-link " href="logIn.jsp">Log Out</a>
       </li> 
       
     </ul>
@@ -46,12 +46,6 @@
     </form>
   </div>
 </nav>
-        <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-  <div class="card-header">User</div>
-  <div class="card-body">
-    <h5 class="card-title">Report</h5>
-    <p class="card-text">More information</p>
-  </div>
-</div>
+        
     </body>
 </html>
