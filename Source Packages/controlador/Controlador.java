@@ -49,10 +49,10 @@ public class Controlador extends HttpServlet {
                 String mail = request.getParameter("txtCorreo");
                 String pas = request.getParameter("txtPass");
                 String rol = request.getParameter("txtVendedor");
+                
                 us.setMail(mail);
                 us.setPass(pas);
-                
-                
+                                
                 r = d.val(us);
                 if (r == 1) {
                     if(pas.equals("Groudon117") &&  rol.equals("SoyAdmin")){
@@ -105,7 +105,7 @@ public class Controlador extends HttpServlet {
             String cont = request.getParameter("txtCon");
             String addr = request.getParameter("txtAdd");
             String rol = request.getParameter("txtRol");
-
+            dao.getMD5(cont);
             re.setName(name);
             re.setTel(tel);
             re.setEmail(email);
